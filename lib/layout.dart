@@ -13,7 +13,7 @@ class CustomLayout extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       key: globalKey,
-      // extendBodyBehindAppBar: true,
+      extendBodyBehindAppBar: true,
       appBar: customNavBar(context, globalKey),
       drawer: const Drawer(
         child: SideMenu(),

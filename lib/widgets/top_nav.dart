@@ -7,7 +7,7 @@ import 'package:web_dashboard/widgets/custom_text.dart';
 AppBar customNavBar(BuildContext context, GlobalKey<ScaffoldState> key) =>
     AppBar(
       elevation: 0.0,
-      backgroundColor: light,
+      backgroundColor: Colors.transparent,
       iconTheme: IconThemeData(color: dark),
       leading: ResponsiveWidget.isSmallScreen(context)
           ? IconButton(

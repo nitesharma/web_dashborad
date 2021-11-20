@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:web_dashboard/constants/controller.dart';
+import 'package:web_dashboard/helpers/responsive.dart';
 import 'package:web_dashboard/widgets/custom_text.dart';
 
 class AuthenticationPage extends StatelessWidget {
@@ -6,8 +9,21 @@ class AuthenticationPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Center(
-      child: Customtext(title: 'Authentication'),
+    return Column(
+      children: [
+        Obx(() => Row(
+              children: [
+                Container(
+                    margin: EdgeInsets.only(
+                        top: ResponsiveWidget.isSmallScreen(context) ? 56 : 6),
+                    child: Customtext(
+                      title: menuController.activeItem.value,
+                      size: 24,
+                      fontWeight: FontWeight.bold,
+                    ))
+              ],
+            ))
+      ],
     );
   }
 }

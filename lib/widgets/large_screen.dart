@@ -15,6 +15,7 @@ class LargeScreen extends StatelessWidget {
         Expanded(
             flex: 5,
             child: Container(
+              padding: const EdgeInsets.symmetric(horizontal: 16.0),
               margin: const EdgeInsets.symmetric(horizontal: 16),
               child: localNavigator(),
             ))
