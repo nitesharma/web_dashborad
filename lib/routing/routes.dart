@@ -1,11 +1,27 @@
-const overViewPageRoute = 'Overview';
-const driversPageRoute = 'Driver';
-const clientsPageRoue = 'Clients';
-const authenticationPageRoute = 'Authentication';
+const rootRoute = "/";
 
-List sideMenuItem = [
-  overViewPageRoute,
-  driversPageRoute,
-  clientsPageRoue,
-  authenticationPageRoute,
+const overviewPageDisplayName = "Overview";
+const overviewPageRoute = "/overview";
+
+const driversPageDisplayName = "Drivers";
+const driversPageRoute = "/drivers";
+
+const clientsPageDisplayName = "Clients";
+const clientsPageRoute = "/clients";
+
+const authenticationPageDisplayName = "Log out";
+const authenticationPageRoute = "/auth";
+
+class MenuItem {
+  final String name;
+  final String route;
+
+  MenuItem(this.name, this.route);
+}
+
+List<MenuItem> sideMenuItemRoutes = [
+  MenuItem(overviewPageDisplayName, overviewPageRoute),
+  MenuItem(driversPageDisplayName, driversPageRoute),
+  MenuItem(clientsPageDisplayName, clientsPageRoute),
+  MenuItem(authenticationPageDisplayName, authenticationPageRoute),
 ];

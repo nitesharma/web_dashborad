@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 const int largeScreenSize = 1366;
 const int mediumScreenSize = 768;
 const int smallScreenSize = 360;
+const int customSize = 1100;
 
 class ResponsiveWidget extends StatelessWidget {
   const ResponsiveWidget(
@@ -21,6 +22,11 @@ class ResponsiveWidget extends StatelessWidget {
   static bool isMediumScreen(BuildContext context) =>
       MediaQuery.of(context).size.width >= mediumScreenSize &&
       MediaQuery.of(context).size.width < largeScreenSize;
+
+  static bool isCustomSize(BuildContext context) {
+    return MediaQuery.of(context).size.width <= customSize &&
+        MediaQuery.of(context).size.width >= mediumScreenSize;
+  }
 
   static bool isLargeScreen(BuildContext context) =>
       MediaQuery.of(context).size.width >= largeScreenSize;
