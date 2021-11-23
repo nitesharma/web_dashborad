@@ -2,8 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:web_dashboard/constants/controller.dart';
 import 'package:web_dashboard/helpers/responsive.dart';
+import 'package:web_dashboard/pages/overview/widgets/data_table.dart';
 import 'package:web_dashboard/pages/overview/widgets/overview_cards_large.dart';
 import 'package:web_dashboard/pages/overview/widgets/overview_cards_medium.dart';
+import 'package:web_dashboard/pages/overview/widgets/revenue_section_large.dart';
+import 'package:web_dashboard/pages/overview/widgets/revenue_section_small.dart';
 import 'package:web_dashboard/widgets/custom_text.dart';
 
 import 'widgets/overview_cards_small.dart';
@@ -36,9 +39,13 @@ class OverviewPage extends StatelessWidget {
               else
                 const OverViewCardsLargeScreen()
             else
-              const OverviewCardsSmallScreen()
+              const OverviewCardsSmallScreen(),
+            (!ResponsiveWidget.isSmallScreen(context))
+                ? const RevenueSectionLarge()
+                : const RevenueSectionSmall(),
+            const DataTableDrivers()
           ]),
-        )
+        ),
       ],
     );
   }
