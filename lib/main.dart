@@ -5,6 +5,12 @@ import 'package:web_dashboard/constants/style.dart';
 import 'package:web_dashboard/controllers/menu_controller.dart';
 import 'package:web_dashboard/controllers/navigation_controller.dart';
 import 'package:web_dashboard/layout.dart';
+import 'package:web_dashboard/pages/404/error_page.dart';
+import 'package:web_dashboard/pages/authentication/authentication.dart';
+import 'package:web_dashboard/pages/clients/clients.dart';
+import 'package:web_dashboard/pages/drivers/drivers.dart';
+import 'package:web_dashboard/pages/overview/overview.dart';
+import 'package:web_dashboard/routing/routes.dart';
 
 void main() {
   Get.put(MenuController());
@@ -18,6 +24,23 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
+      initialRoute: authenticationPageRoute,
+      unknownRoute: GetPage(
+          name: "/not-found",
+          page: () => const ErrorPage(),
+          transition: Transition.fadeIn),
+      getPages: [
+        GetPage(name: rootRoute, page: () => CustomLayout()),
+        GetPage(
+            name: authenticationPageRoute,
+            page: () => const AuthenticationPage()),
+        GetPage(
+          name: overviewPageRoute,
+          page: () => const OverviewPage(),
+        ),
+        GetPage(name: driversPageRoute, page: () => const DriversPage()),
+        GetPage(name: clientsPageRoute, page: () => const ClientsPage()),
+      ],
       debugShowCheckedModeBanner: false,
       title: 'Dash Board',
       theme: ThemeData(
@@ -33,7 +56,7 @@ class MyApp extends StatelessWidget {
         }),
         primaryColor: Colors.blue,
       ),
-      home: CustomLayout(),
+      // home: const AuthenticationPage(),
     );
   }
 }

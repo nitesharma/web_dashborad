@@ -7,11 +7,11 @@ import 'routes.dart';
 
 Route<dynamic> generateRoute(RouteSettings settings) {
   switch (settings.name) {
-    case overviewPageDisplayName:
+    case overviewPageRoute:
       return _getPageRoute(const OverviewPage());
-    case driversPageDisplayName:
+    case driversPageRoute:
       return _getPageRoute(const DriversPage());
-    case clientsPageDisplayName:
+    case clientsPageRoute:
       return _getPageRoute(const ClientsPage());
     default:
       return _getPageRoute(const OverviewPage());
