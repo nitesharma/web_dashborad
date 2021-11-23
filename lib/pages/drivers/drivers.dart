@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:web_dashboard/constants/controller.dart';
 import 'package:web_dashboard/helpers/responsive.dart';
+import 'package:web_dashboard/pages/drivers/widgets/drivers_table.dart';
 import 'package:web_dashboard/widgets/custom_text.dart';
 
 class DriversPage extends StatelessWidget {
@@ -22,7 +23,8 @@ class DriversPage extends StatelessWidget {
                       fontWeight: FontWeight.bold,
                     ))
               ],
-            ))
+            )),
+        Expanded(child: ListView(children: const [DriversTable()]))
       ],
     );
   }

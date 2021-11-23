@@ -43,7 +43,7 @@ class OverviewPage extends StatelessWidget {
             (!ResponsiveWidget.isSmallScreen(context))
                 ? const RevenueSectionLarge()
                 : const RevenueSectionSmall(),
-            const DataTableDrivers()
+            const AvailableDrivers()
           ]),
         ),
       ],

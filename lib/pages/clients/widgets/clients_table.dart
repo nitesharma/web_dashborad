@@ -1,12 +1,10 @@
 import 'package:data_table_2/data_table_2.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:web_dashboard/constants/style.dart';
 import 'package:web_dashboard/widgets/custom_text.dart';
 
-/// Example without a datasource
-class AvailableDrivers extends StatelessWidget {
-  const AvailableDrivers({Key? key}) : super(key: key);
+class ClientsTable extends StatelessWidget {
+  const ClientsTable({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -85,11 +83,11 @@ class AvailableDrivers extends StatelessWidget {
                               borderRadius: BorderRadius.circular(20),
                               color: light),
                           child: Customtext(
-                            title: "Assign delivery",
+                            title: "Block Clients",
                             color: active.withOpacity(.7),
                             fontWeight: FontWeight.bold,
                           ),
-                        ))
+                        )),
                       ]))),
         ],
       ),
